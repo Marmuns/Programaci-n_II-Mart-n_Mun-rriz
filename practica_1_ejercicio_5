@@ -1,0 +1,45 @@
+//EJERCICIO 5 Martín Munárriz y Hugo Marchand
+
+#include <iostream>
+#include <string>
+#include <ctime>
+
+using namespace std;
+
+class Empleado {
+    private:
+        string nombre;
+        double salario;
+        int anioContratacion;
+
+    public:
+        Empleado(string nombre, double salario, int anioContratacion) {
+            this->nombre = nombre;
+            this->salario = salario;
+            this->anioContratacion = anioContratacion;
+        }
+
+        int calcularAntiguedad() {
+            time_t t = time(0);
+            struct tm *now = localtime(&t);
+            int anioActual = now->tm_year + 1900;
+            return anioActual - anioContratacion;
+        }
+
+        void mostrarEmpleado() {
+            cout << "Nombre: " << nombre << endl;
+            cout << "Salario: " << salario << endl;
+            cout << "Anio de contratacion: " << anioContratacion << endl;
+            cout << "Antiguedad: " << calcularAntiguedad() << " anios" << endl;
+        }
+};
+
+int main() {
+    Empleado e1("Jaime", 1000, 2015);
+    Empleado e2("Hugo", 1500, 2010);
+    Empleado e3("Martin", 2000, 2012);
+    e1.mostrarEmpleado();
+    e2.mostrarEmpleado();
+    e3.mostrarEmpleado();
+    return 0;
+}
