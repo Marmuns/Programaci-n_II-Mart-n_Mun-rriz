@@ -1,0 +1,38 @@
+//EJERCICIO 3 Martín Munárriz y Hugo Marchand
+
+#include <iostream>
+using namespace std;
+
+class CuentaBancaria {
+    private:
+        string nombreTitular;
+        int numCuenta;
+        double saldo;
+    public:
+        CuentaBancaria(string nombre, int num, double saldoInicial) {
+            nombreTitular = nombre;
+            numCuenta = num;
+            saldo = saldoInicial;
+        }
+        void depositar(double cantidad) {
+            saldo += cantidad;
+        }
+        void retirar(double cantidad) {
+            saldo -= cantidad;
+        }
+        void mostrarInformacion() {
+            cout << "Nombre del titular: " << nombreTitular << endl;
+            cout << "Numero de cuenta: " << numCuenta << endl;
+            cout << "Saldo actual: $" << saldo << endl;
+        }
+};
+
+int main() {
+    CuentaBancaria cuenta1("Hugo Munarriz", 768934, 1000);
+    cuenta1.mostrarInformacion();
+    cuenta1.depositar(500);
+    cuenta1.mostrarInformacion();
+    cuenta1.retirar(200);
+    cuenta1.mostrarInformacion();
+    return 0;
+}
