@@ -1,0 +1,29 @@
+//EJERCICIO 2 Martín Munárriz y Hugo Marchand
+
+#include <iostream>
+
+using namespace std;
+
+class Persona {
+public:
+  string nombre;
+  int edad;
+  string direccion;
+
+  void mostrarInformacion() {
+    cout << "Nombre: " << nombre << endl;
+    cout << "Edad: " << edad << endl;
+    cout << "Direccion: " << direccion << endl;
+  }
+};
+
+int main() {
+  Persona persona;
+  persona.nombre = "Juan";
+  persona.edad = 30;
+  persona.direccion = "Calle 123";
+
+  persona.mostrarInformacion();
+
+  return 0;
+}
