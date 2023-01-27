@@ -1,0 +1,32 @@
+//EJERCICIO 1 Martín Munárriz y Hugo Marchand
+
+#include <iostream>
+using namespace std;
+
+class Rectangulo {
+public:
+  int ancho, alto;
+
+  int obtenerArea() {
+    return ancho * alto;
+  }
+
+  int obtenerPerimetro() {
+    return 2 * (ancho + alto);
+  }
+};
+
+int main() {
+  Rectangulo rect;
+  rect.ancho = 4;
+  rect.alto = 5;
+
+  int area = rect.obtenerArea();
+  int perimetro = rect.obtenerPerimetro();
+
+  cout << "Area: " << area << endl;
+  cout << "Perimetro: " << perimetro << endl;
+
+  return 0;
+}
+
