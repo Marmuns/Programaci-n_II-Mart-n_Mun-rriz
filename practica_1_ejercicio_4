@@ -1,0 +1,34 @@
+//EJERCICIO 4 Martín Munárriz y Hugo Marchand
+
+#include <iostream>
+using namespace std;
+
+class Libro {
+    private:
+        string titulo;
+        string autor;
+        int anioPublicacion;
+    public:
+        Libro(string titulo, string autor, int anio) {
+            this->titulo = titulo;
+            this->autor = autor;
+            anioPublicacion = anio;
+        }
+        void mostrarInformacion() {
+            cout << "Titulo: " << titulo << endl;
+            cout << "Autor: " << autor << endl;
+            cout << "Anio de Publicacion: " << anioPublicacion << endl;
+        }
+};
+
+int main() {
+    Libro libros[3] = {
+        Libro("Oceano mar", "Alessandro Baricco", 2006),
+        Libro("Tiempo de silencio", "Luis Martin-Santos", 1962),
+        Libro("La colmena", "Camilo Jose Cela", 1951)
+    };
+    for (int i = 0; i < 3; i++) {
+        libros[i].mostrarInformacion();
+    }
+    return 0;
+}
